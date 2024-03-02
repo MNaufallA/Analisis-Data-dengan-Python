@@ -1,1 +1,1 @@
-anggep ini
+url streamlit: https://mnaufalladicoding1.streamlit.app/
