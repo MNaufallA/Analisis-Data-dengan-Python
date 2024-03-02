@@ -42,7 +42,7 @@ Nongzhanguan_df = pd.read_csv('https://raw.githubusercontent.com/MNaufallA/Anali
 Nongzhanguan_df.head()
 
 #### Load Tabel Stasiun Shunyi
-Shunyi_df = pd.read_csvpd.read_csv('https://raw.githubusercontent.com/MNaufallA/Analisis-Data-dengan-Python/main/submission/data/PRSA_Data_Shunyi_20130301-20170228.csv')
+Shunyi_df = pd.read_csv('https://raw.githubusercontent.com/MNaufallA/Analisis-Data-dengan-Python/main/submission/data/PRSA_Data_Shunyi_20130301-20170228.csv')
 Shunyi_df.head()
 
 #### Load Tabel Stasiun Tiantan
