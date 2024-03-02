@@ -10,52 +10,52 @@ from sklearn.preprocessing import StandardScaler
 ### Gathering Data
 
 #### Load Tabel Stasiun Aotizhongxin
-Aotizhongxin_df = pd.read_csv('https://github.com/MNaufallA/Analisis-Data-dengan-Python/blob/main/submission/data/PRSA_Data_Aotizhongxin_20130301-20170228.csv')
+Aotizhongxin_df = pd.read_csv('https://raw.githubusercontent.com/MNaufallA/Analisis-Data-dengan-Python/main/submission/data/PRSA_Data_Aotizhongxin_20130301-20170228.csv')
 Aotizhongxin_df.head()
 
 #### Load Tabel Stasiun Changping
-Changping_df = pd.read_csv('https://github.com/MNaufallA/Analisis-Data-dengan-Python/blob/main/submission/data/PRSA_Data_Changping_20130301-20170228.csv')
+Changping_df = pd.read_csv('https://raw.githubusercontent.com/MNaufallA/Analisis-Data-dengan-Python/main/submission/data/PRSA_Data_Changping_20130301-20170228.csv')
 Changping_df.head()
 
 #### Load Tabel Stasiun Dingling
-Dingling_df = pd.read_csv('https://github.com/MNaufallA/Analisis-Data-dengan-Python/blob/main/submission/data/PRSA_Data_Dingling_20130301-20170228.csv')
+Dingling_df = pd.read_csv('https://raw.githubusercontent.com/MNaufallA/Analisis-Data-dengan-Python/main/submission/data/PRSA_Data_Dingling_20130301-20170228.csv')
 Dingling_df.head()
 
 #### Load Tabel Stasiun Dongsi
-Dongsi_df = pd.read_csv('https://github.com/MNaufallA/Analisis-Data-dengan-Python/blob/main/submission/data/PRSA_Data_Dongsi_20130301-20170228.csv')
+Dongsi_df = pd.read_csv('https://raw.githubusercontent.com/MNaufallA/Analisis-Data-dengan-Python/main/submission/data/PRSA_Data_Dongsi_20130301-20170228.csv')
 Dongsi_df.head()
 
 #### Load Tabel Stasiun Guanyuan
-Guanyuan_df = pd.read_csv('https://github.com/MNaufallA/Analisis-Data-dengan-Python/blob/main/submission/data/PRSA_Data_Guanyuan_20130301-20170228.csv')
+Guanyuan_df = pd.read_csv('https://raw.githubusercontent.com/MNaufallA/Analisis-Data-dengan-Python/main/submission/data/PRSA_Data_Guanyuan_20130301-20170228.csv')
 Guanyuan_df.head()
 
 #### Load Tabel Stasiun Gucheng
-Gucheng_df = pd.read_csv('https://github.com/MNaufallA/Analisis-Data-dengan-Python/blob/main/submission/data/PRSA_Data_Gucheng_20130301-20170228.csv')
+Gucheng_df = pd.read_csv('https://raw.githubusercontent.com/MNaufallA/Analisis-Data-dengan-Python/main/submission/data/PRSA_Data_Gucheng_20130301-20170228.csv')
 Gucheng_df.head()
 
 #### Load Tabel Stasiun Huairou
-Huairou_df = pd.read_csv('https://github.com/MNaufallA/Analisis-Data-dengan-Python/blob/main/submission/data/PRSA_Data_Huairou_20130301-20170228.csv')
+Huairou_df = pd.read_csv('https://raw.githubusercontent.com/MNaufallA/Analisis-Data-dengan-Python/main/submission/data/PRSA_Data_Huairou_20130301-20170228.csv')
 Huairou_df.head()
 
 #### Load Tabel Stasiun Nongzhanguan
-Nongzhanguan_df = pd.read_csv('https://github.com/MNaufallA/Analisis-Data-dengan-Python/blob/main/submission/data/PRSA_Data_Nongzhanguan_20130301-20170228.csv')
+Nongzhanguan_df = pd.read_csv('https://raw.githubusercontent.com/MNaufallA/Analisis-Data-dengan-Python/main/submission/data/PRSA_Data_Nongzhanguan_20130301-20170228.csv')
 Nongzhanguan_df.head()
 
 #### Load Tabel Stasiun Shunyi
-Shunyi_df = pd.read_csv('https://github.com/MNaufallA/Analisis-Data-dengan-Python/blob/main/submission/data/PRSA_Data_Shunyi_20130301-20170228.csv')
+Shunyi_df = pd.read_csvpd.read_csv('https://raw.githubusercontent.com/MNaufallA/Analisis-Data-dengan-Python/main/submission/data/PRSA_Data_Shunyi_20130301-20170228.csv')
 Shunyi_df.head()
 
 #### Load Tabel Stasiun Tiantan
-Tiantan_df = pd.read_csv('https://github.com/MNaufallA/Analisis-Data-dengan-Python/blob/main/submission/data/PRSA_Data_Tiantan_20130301-20170228.csv')
+Tiantan_df = pd.read_csv('https://raw.githubusercontent.com/MNaufallA/Analisis-Data-dengan-Python/main/submission/data/PRSA_Data_Tiantan_20130301-20170228.csv')
 Tiantan_df.head()
 
 #### Load Tabel Stasiun Wanliu
-Wanliu_df = pd.read_csv('https://github.com/MNaufallA/Analisis-Data-dengan-Python/blob/main/submission/data/PRSA_Data_Wanliu_20130301-20170228.csv')
+Wanliu_df = pd.read_csv('https://raw.githubusercontent.com/MNaufallA/Analisis-Data-dengan-Python/main/submission/data/PRSA_Data_Wanliu_20130301-20170228.csv')
 Wanliu_df.head()
 
 #### Load Tabel Stasiun Wanshouxigong
 
-Wanshouxigong_df = pd.read_csv('https://github.com/MNaufallA/Analisis-Data-dengan-Python/blob/main/submission/data/PRSA_Data_Wanshouxigong_20130301-20170228.csv')
+Wanshouxigong_df = pd.read_csv('https://raw.githubusercontent.com/MNaufallA/Analisis-Data-dengan-Python/main/submission/data/PRSA_Data_Wanshouxigong_20130301-20170228.csv')
 Wanshouxigong_df.head()
 
 ### Assessing Data
