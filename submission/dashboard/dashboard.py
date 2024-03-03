@@ -12,52 +12,40 @@ from sklearn.cluster import KMeans
 
 #### Load Tabel Stasiun Aotizhongxin
 Aotizhongxin_df = pd.read_csv('https://raw.githubusercontent.com/MNaufallA/Analisis-Data-dengan-Python/main/submission/data/PRSA_Data_Aotizhongxin_20130301-20170228.csv')
-Aotizhongxin_df.head()
 
 #### Load Tabel Stasiun Changping
 Changping_df = pd.read_csv('https://raw.githubusercontent.com/MNaufallA/Analisis-Data-dengan-Python/main/submission/data/PRSA_Data_Changping_20130301-20170228.csv')
-Changping_df.head()
 
 #### Load Tabel Stasiun Dingling
 Dingling_df = pd.read_csv('https://raw.githubusercontent.com/MNaufallA/Analisis-Data-dengan-Python/main/submission/data/PRSA_Data_Dingling_20130301-20170228.csv')
-Dingling_df.head()
 
 #### Load Tabel Stasiun Dongsi
 Dongsi_df = pd.read_csv('https://raw.githubusercontent.com/MNaufallA/Analisis-Data-dengan-Python/main/submission/data/PRSA_Data_Dongsi_20130301-20170228.csv')
-Dongsi_df.head()
 
 #### Load Tabel Stasiun Guanyuan
 Guanyuan_df = pd.read_csv('https://raw.githubusercontent.com/MNaufallA/Analisis-Data-dengan-Python/main/submission/data/PRSA_Data_Guanyuan_20130301-20170228.csv')
-Guanyuan_df.head()
 
 #### Load Tabel Stasiun Gucheng
 Gucheng_df = pd.read_csv('https://raw.githubusercontent.com/MNaufallA/Analisis-Data-dengan-Python/main/submission/data/PRSA_Data_Gucheng_20130301-20170228.csv')
-Gucheng_df.head()
 
 #### Load Tabel Stasiun Huairou
 Huairou_df = pd.read_csv('https://raw.githubusercontent.com/MNaufallA/Analisis-Data-dengan-Python/main/submission/data/PRSA_Data_Huairou_20130301-20170228.csv')
-Huairou_df.head()
 
 #### Load Tabel Stasiun Nongzhanguan
 Nongzhanguan_df = pd.read_csv('https://raw.githubusercontent.com/MNaufallA/Analisis-Data-dengan-Python/main/submission/data/PRSA_Data_Nongzhanguan_20130301-20170228.csv')
-Nongzhanguan_df.head()
 
 #### Load Tabel Stasiun Shunyi
 Shunyi_df = pd.read_csv('https://raw.githubusercontent.com/MNaufallA/Analisis-Data-dengan-Python/main/submission/data/PRSA_Data_Shunyi_20130301-20170228.csv')
-Shunyi_df.head()
 
 #### Load Tabel Stasiun Tiantan
 Tiantan_df = pd.read_csv('https://raw.githubusercontent.com/MNaufallA/Analisis-Data-dengan-Python/main/submission/data/PRSA_Data_Tiantan_20130301-20170228.csv')
-Tiantan_df.head()
 
 #### Load Tabel Stasiun Wanliu
 Wanliu_df = pd.read_csv('https://raw.githubusercontent.com/MNaufallA/Analisis-Data-dengan-Python/main/submission/data/PRSA_Data_Wanliu_20130301-20170228.csv')
-Wanliu_df.head()
 
 #### Load Tabel Stasiun Wanshouxigong
 
 Wanshouxigong_df = pd.read_csv('https://raw.githubusercontent.com/MNaufallA/Analisis-Data-dengan-Python/main/submission/data/PRSA_Data_Wanshouxigong_20130301-20170228.csv')
-Wanshouxigong_df.head()
 
 
 ### Cleaning Data
@@ -69,7 +57,6 @@ Aotizhongxin_df[['PM2.5', 'PM10', 'SO2', 'NO2', 'CO', 'O3']] = Aotizhongxin_df[[
 
 # Metode forward fill
 Aotizhongxin_df[['TEMP', 'PRES', 'DEWP', 'RAIN', 'wd', 'WSPM']] = Aotizhongxin_df[['TEMP', 'PRES', 'DEWP', 'RAIN', 'wd', 'WSPM']].fillna(method='ffill')
-Aotizhongxin_df.isna().sum()
 
 #### Membersihkan Data Changping_df
 ##### Menangani missing value
@@ -78,7 +65,6 @@ Changping_df[['PM2.5', 'PM10', 'SO2', 'NO2', 'CO', 'O3']] = Changping_df[['PM2.5
 
 # Metode forward fill
 Changping_df[['TEMP', 'PRES', 'DEWP', 'RAIN', 'wd', 'WSPM']] = Changping_df[['TEMP', 'PRES', 'DEWP', 'RAIN', 'wd', 'WSPM']].fillna(method='ffill')
-Aotizhongxin_df.isna().sum()
 
 #### Membersihkan Data Dingling_df
 ##### Menangani missing value
@@ -87,7 +73,6 @@ Dingling_df[['PM2.5', 'PM10', 'SO2', 'NO2', 'CO', 'O3']] = Dingling_df[['PM2.5',
 
 # Metode forward fill
 Dingling_df[['TEMP', 'PRES', 'DEWP', 'RAIN', 'wd', 'WSPM']] = Dingling_df[['TEMP', 'PRES', 'DEWP', 'RAIN', 'wd', 'WSPM']].fillna(method='ffill')
-Aotizhongxin_df.isna().sum()
 
 #### Membersihkan Data Dongsi_df
 ##### Menangani missing value
@@ -96,7 +81,6 @@ Dongsi_df[['PM2.5', 'PM10', 'SO2', 'NO2', 'CO', 'O3']] = Dongsi_df[['PM2.5', 'PM
 
 # Metode forward fill
 Dongsi_df[['TEMP', 'PRES', 'DEWP', 'RAIN', 'wd', 'WSPM']] = Dongsi_df[['TEMP', 'PRES', 'DEWP', 'RAIN', 'wd', 'WSPM']].fillna(method='ffill')
-Dongsi_df.isna().sum()
 
 #### Membersihkan Data Guanyuan_df
 ##### Menangani missing value
@@ -105,7 +89,6 @@ Guanyuan_df[['PM2.5', 'PM10', 'SO2', 'NO2', 'CO', 'O3']] = Guanyuan_df[['PM2.5',
 
 # Metode forward fill
 Guanyuan_df[['TEMP', 'PRES', 'DEWP', 'RAIN', 'wd', 'WSPM']] = Guanyuan_df[['TEMP', 'PRES', 'DEWP', 'RAIN', 'wd', 'WSPM']].fillna(method='ffill')
-Guanyuan_df.isna().sum()
 
 #### Membersihkan Data Gucheng_df
 ##### Menangani missing value
@@ -117,7 +100,6 @@ Gucheng_df[['TEMP', 'PRES', 'DEWP', 'RAIN', 'wd', 'WSPM']] = Gucheng_df[['TEMP',
 
 # Metode backward fill
 Gucheng_df[['NO2']] = Gucheng_df[['NO2']].fillna(method='bfill')
-Gucheng_df.isna().sum()
 
 #### Membersihkan Data Huairou_df
 ##### Menangani missing value
@@ -126,7 +108,6 @@ Huairou_df[['PM2.5', 'PM10', 'SO2', 'NO2', 'CO', 'O3']] = Huairou_df[['PM2.5', '
 
 # Metode forward fill
 Huairou_df[['TEMP', 'PRES', 'DEWP', 'RAIN', 'wd', 'WSPM']] = Huairou_df[['TEMP', 'PRES', 'DEWP', 'RAIN', 'wd', 'WSPM']].fillna(method='ffill')
-Guanyuan_df.isna().sum()
 
 #### Membersihkan Data Nongzhanguan_df
 ##### Menangani missing value
@@ -135,7 +116,6 @@ Nongzhanguan_df[['PM2.5', 'PM10', 'SO2', 'NO2', 'CO', 'O3']] = Nongzhanguan_df[[
 
 # Metode forward fill
 Nongzhanguan_df[['TEMP', 'PRES', 'DEWP', 'RAIN', 'wd', 'WSPM']] = Nongzhanguan_df[['TEMP', 'PRES', 'DEWP', 'RAIN', 'wd', 'WSPM']].fillna(method='ffill')
-Nongzhanguan_df.isna().sum()
 
 #### Membersihkan Data Shunyi_df
 ##### Menangani missing value
@@ -144,7 +124,6 @@ Shunyi_df[['PM2.5', 'PM10', 'SO2', 'NO2', 'CO', 'O3']] = Shunyi_df[['PM2.5', 'PM
 
 # Metode forward fill
 Shunyi_df[['TEMP', 'PRES', 'DEWP', 'RAIN', 'wd', 'WSPM']] = Shunyi_df[['TEMP', 'PRES', 'DEWP', 'RAIN', 'wd', 'WSPM']].fillna(method='ffill')
-Shunyi_df.isna().sum()
 
 #### Membersihkan Data Tiantan_df
 ##### Menangani missing value
@@ -153,7 +132,6 @@ Tiantan_df[['PM2.5', 'PM10', 'SO2', 'NO2', 'CO', 'O3']] = Tiantan_df[['PM2.5', '
 
 # Metode forward fill
 Tiantan_df[['TEMP', 'PRES', 'DEWP', 'RAIN', 'wd', 'WSPM']] = Tiantan_df[['TEMP', 'PRES', 'DEWP', 'RAIN', 'wd', 'WSPM']].fillna(method='ffill')
-Tiantan_df.isna().sum()
 
 #### Membersihkan Data Wanliu_df
 ##### Menangani missing value
@@ -162,7 +140,6 @@ Wanliu_df[['PM2.5', 'PM10', 'SO2', 'NO2', 'CO', 'O3']] = Wanliu_df[['PM2.5', 'PM
 
 # Metode forward fill
 Wanliu_df[['TEMP', 'PRES', 'DEWP', 'RAIN', 'wd', 'WSPM']] = Wanliu_df[['TEMP', 'PRES', 'DEWP', 'RAIN', 'wd', 'WSPM']].fillna(method='ffill')
-Wanliu_df.isna().sum()
 
 #### Membersihkan Data Wanshouxigong_df
 ##### Menangani missing value
@@ -171,7 +148,6 @@ Wanshouxigong_df[['PM2.5', 'PM10', 'SO2', 'NO2', 'CO', 'O3']] = Wanshouxigong_df
 
 # Metode forward fill
 Wanshouxigong_df[['TEMP', 'PRES', 'DEWP', 'RAIN', 'wd', 'WSPM']] = Wanshouxigong_df[['TEMP', 'PRES', 'DEWP', 'RAIN', 'wd', 'WSPM']].fillna(method='ffill')
-Wanshouxigong_df.isna().sum()
 
 
 ## Exploratory Data Analysis (EDA)
@@ -182,54 +158,9 @@ list_df = [Aotizhongxin_df, Changping_df, Dingling_df, Dongsi_df, Guanyuan_df, G
 
 # Gabungkan semua dataframe
 all_df = pd.concat(list_df, ignore_index=True)
-all_df.head()
-all_df.isna().sum()
-print("Jumlah duplikasi: ",all_df.duplicated().sum())
-all_df.describe()
 
 # Metode interpolasi
 all_df[['NO2']] = all_df[['NO2']].interpolate(method='linear')
-all_df.isna().sum()
-
-
-#### Explore variabel polutan dan stasiun
-
-# Mendefinisikan variabel
-pollutants = ['PM2.5', 'PM10', 'SO2', 'NO2', 'CO', 'O3']
-stations = ['Dongsi', 'Guanyuan', 'Gucheng', 'Huairou', 'Nongzhanguan', 'Shunyi', 'Tiantan', 'Wanliu', 'Wanshouxigong']
-
-# Memuat pivot table dengan 'station' sebagai indeks dan rata-rata untuk setiap polutan
-pivot_table = all_df.pivot_table(index='station', values=pollutants, aggfunc='mean')
-print(pivot_table)
-
-
-#### Explore variabel lingkungan dan polutan
-# Mendefinisikan variabel
-pollutants = ['PM2.5', 'PM10', 'SO2', 'NO2', 'CO', 'O3']
-environmental_conditions = ['TEMP', 'PRES', 'DEWP', 'RAIN', 'wd', 'WSPM']
-
-# Buat pivot table dengan 'environmental_conditions' sebagai indeks dan rata-rata untuk setiap polutan
-pivot_table = all_df.pivot_table(index=environmental_conditions, values=pollutants, aggfunc='mean')
-print(pivot_table)
-
-
-#### Explore variabel polutan dan waktu (tahun)
-# Mendefinisikan variabel
-pollutants = ['PM2.5', 'PM10', 'SO2', 'NO2', 'CO', 'O3']
-
-# Buat pivot table dengan 'tahun' sebagai indeks dan rata-rata untuk setiap polutan
-pivot_table = all_df.pivot_table(index='year', values=pollutants, aggfunc='mean')
-print(pivot_table)
-
-
-#### Explore variabel waktu dan stasiun
-# Mendifinisikan variabel
-pollutants = ['PM2.5', 'PM10', 'SO2', 'NO2', 'CO', 'O3']
-stations = ['Dongsi', 'Guanyuan', 'Gucheng', 'Huairou', 'Nongzhanguan', 'Shunyi', 'Tiantan', 'Wanliu', 'Wanshouxigong']
-
-# Buat pivot table dengan 'tahun' dan 'stasiun' sebagai indeks dan rata-rata untuk setiap polutan
-pivot_table = all_df.pivot_table(index=['year', 'station'], values=pollutants, aggfunc='mean')
-print(pivot_table)
 
 
 
