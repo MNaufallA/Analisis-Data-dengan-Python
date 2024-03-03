@@ -310,59 +310,53 @@ plt.tight_layout()
 st.pyplot(fig)
 
 
-
 ### Pertanyaan 3: Bagaimana pengaruh kondisi lingkungan terhadap tingkat polutan?
 st.subheader('Pengaruh Kondisi Lingkungan Terhadap Tingkat Polutan')
 #### Pengaruh curah hujan terhadap kadar CO (Karbon Monoksida)
 st.markdown('#### Curah Hujan Terhadap Kadar CO)')
-plt.figure(figsize=(10, 6))
-sns.scatterplot(data=all_df, x='RAIN', y='CO', hue='station')
-plt.title('Scatter plot of CO vs RAIN for each station')
-st.pyplot(fig)
+fig1, ax1 = plt.subplots(figsize=(10, 6))
+sns.scatterplot(data=all_df, x='RAIN', y='CO', hue='station', ax=ax1)
+ax1.set_title('Scatter plot of CO vs RAIN for each station')
+st.pyplot(fig1)
 
 #### Pengaruh temperatur terhadap kadar O3 (Ozon)
 st.markdown('#### Temperatur Terhadap Kadar O3 (Ozon)')
-plt.figure(figsize=(10, 6))
-sns.scatterplot(data=all_df, x='TEMP', y='O3', hue='station')
-plt.title('Scatter plot of O3 vs TEMP for each station')
-st.pyplot(fig)
-
-
+fig2, ax2 = plt.subplots(figsize=(10, 6))
+sns.scatterplot(data=all_df, x='TEMP', y='O3', hue='station', ax=ax2)
+ax2.set_title('Scatter plot of O3 vs TEMP for each station')
+st.pyplot(fig2)
 
 ### Pertanyaan 4: Bagaimana fluktuasi tingkat polutan sepanjang waktu?
 st.subheader('Fluktuasi Tingkat Polutan Sepanjang Waktu')
 #### Fluktuasi Karbon Monoksida sepanjang waktu
 st.markdown('#### Fluktuasi CO (Karbon Monoksida)')
-plt.figure(figsize=(10, 6))
+fig3, ax3 = plt.subplots(figsize=(10, 6))
 
 # Buat line chart untuk CO
-all_df.groupby('year')['CO'].mean().plot(label='CO')
+all_df.groupby('year')['CO'].mean().plot(label='CO', ax=ax3)
 
-plt.title('Fluctuation of CO over years')
-plt.xlabel('Year')
-plt.ylabel('CO concentration')
-plt.legend()
-st.pyplot(fig)
+ax3.set_title('Fluctuation of CO over years')
+ax3.set_xlabel('Year')
+ax3.set_ylabel('CO concentration')
+ax3.legend()
+st.pyplot(fig3)
 
 #### Fluktuasi polutan lain sepanjang waktu
 st.markdown('#### Fluktuasi Polutan Lain')
 # Daftar variabel polutan kecuali CO
 pollutants = ['PM2.5', 'PM10', 'SO2', 'NO2', 'O3']
 
-plt.figure(figsize=(10, 6))
+fig4, ax4 = plt.subplots(figsize=(10, 6))
 
 # Buat line chart untuk setiap polutan
 for pollutant in pollutants:
-    all_df.groupby('year')[pollutant].mean().plot(label=pollutant)
+    all_df.groupby('year')[pollutant].mean().plot(label=pollutant, ax=ax4)
 
-plt.title('Fluctuation of pollutants over years')
-plt.xlabel('Year')
-plt.ylabel('Pollutants concentration')
-plt.legend()
-st.pyplot(fig)
-
-
-
+ax4.set_title('Fluctuation of pollutants over years')
+ax4.set_xlabel('Year')
+ax4.set_ylabel('Pollutants concentration')
+ax4.legend()
+st.pyplot(fig4)
 
 ### Pertanyaan 5: Bagaimana distribusi stasiun berdasarkan tingkat polutan dan kondisi lingkungan? (Cluster)
 st.subheader('Distribusi Stasiun Berdasarkan Tingkat Polutan dan Kondisi Lingkungan (Cluster)')
@@ -391,9 +385,9 @@ for i in range(n_clusters):
     print(all_df[all_df['cluster'] == i])
 
 # Visualisasi hasil clustering
-plt.figure(figsize=(10, 7))
-sns.scatterplot(data=all_df, x='PM2.5', y='PM10', hue='cluster', palette='viridis')
-plt.title('Hasil Clustering')
-plt.xlabel('PM2.5')
-plt.ylabel('PM10')
-st.pyplot(fig)
+fig5, ax5 = plt.subplots(figsize=(10, 7))
+sns.scatterplot(data=all_df, x='PM2.5', y='PM10', hue='cluster', palette='viridis', ax=ax5)
+ax5.set_title('Hasil Clustering')
+ax5.set_xlabel('PM2.5')
+ax5.set_ylabel('PM10')
+st.pyplot(fig5)
