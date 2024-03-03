@@ -164,6 +164,47 @@ all_df[['NO2']] = all_df[['NO2']].interpolate(method='linear')
 
 
 
+#### Explore variabel polutan dan stasiun
+
+# Mendefinisikan variabel
+pollutants = ['PM2.5', 'PM10', 'SO2', 'NO2', 'CO', 'O3']
+stations = ['Dongsi', 'Guanyuan', 'Gucheng', 'Huairou', 'Nongzhanguan', 'Shunyi', 'Tiantan', 'Wanliu', 'Wanshouxigong']
+
+# Memuat pivot table dengan 'station' sebagai indeks dan rata-rata untuk setiap polutan
+pivot_table = all_df.pivot_table(index='station', values=pollutants, aggfunc='mean')
+print(pivot_table)
+
+
+#### Explore variabel lingkungan dan polutan
+# Mendefinisikan variabel
+pollutants = ['PM2.5', 'PM10', 'SO2', 'NO2', 'CO', 'O3']
+environmental_conditions = ['TEMP', 'PRES', 'DEWP', 'RAIN', 'wd', 'WSPM']
+
+# Buat pivot table dengan 'environmental_conditions' sebagai indeks dan rata-rata untuk setiap polutan
+pivot_table = all_df.pivot_table(index=environmental_conditions, values=pollutants, aggfunc='mean')
+print(pivot_table)
+
+
+#### Explore variabel polutan dan waktu (tahun)
+# Mendefinisikan variabel
+pollutants = ['PM2.5', 'PM10', 'SO2', 'NO2', 'CO', 'O3']
+
+# Buat pivot table dengan 'tahun' sebagai indeks dan rata-rata untuk setiap polutan
+pivot_table = all_df.pivot_table(index='year', values=pollutants, aggfunc='mean')
+print(pivot_table)
+
+
+#### Explore variabel waktu dan stasiun
+# Mendifinisikan variabel
+pollutants = ['PM2.5', 'PM10', 'SO2', 'NO2', 'CO', 'O3']
+stations = ['Dongsi', 'Guanyuan', 'Gucheng', 'Huairou', 'Nongzhanguan', 'Shunyi', 'Tiantan', 'Wanliu', 'Wanshouxigong']
+
+# Buat pivot table dengan 'tahun' dan 'stasiun' sebagai indeks dan rata-rata untuk setiap polutan
+pivot_table = all_df.pivot_table(index=['year', 'station'], values=pollutants, aggfunc='mean')
+print(pivot_table)
+
+
+
 ## Visualization & Explanatory Analysis
 
 ### Pertanyaan 1: Bagaimana perbandingan tingkat polutan total antar stasiun?
@@ -187,7 +228,8 @@ ax.set_xlabel('Konsentrasi')
 ax.invert_yaxis()  # Membalik urutan station
 
 plt.tight_layout()
-plt.show()
+st.pyplot()  # Mengganti plt.show() dengan st.pyplot()
+
 
 
 
@@ -201,7 +243,7 @@ ax.set_ylabel('Konsentrasi')
 for p in ax.patches:
     ax.annotate(np.round(p.get_height(),decimals=2), (p.get_x()+p.get_width()/2., p.get_height()), ha='center', va='center', xytext=(0, 10), textcoords='offset points')
 plt.tight_layout()
-plt.show()
+st.pyplot()  # Mengganti plt.show() dengan st.pyplot()
 
 #### Polutan NO2 (Nitrogen Dioksida)
 # Plot untuk NO2
@@ -212,7 +254,7 @@ ax.set_ylabel('Konsentrasi')
 for p in ax.patches:
     ax.annotate(np.round(p.get_height(),decimals=2), (p.get_x()+p.get_width()/2., p.get_height()), ha='center', va='center', xytext=(0, 10), textcoords='offset points')
 plt.tight_layout()
-plt.show()
+st.pyplot()  # Mengganti plt.show() dengan st.pyplot()
 
 #### Polutan O3 (Ozon)
 # Plot untuk O3
@@ -223,7 +265,7 @@ ax.set_ylabel('Konsentrasi')
 for p in ax.patches:
     ax.annotate(np.round(p.get_height(),decimals=2), (p.get_x()+p.get_width()/2., p.get_height()), ha='center', va='center', xytext=(0, 10), textcoords='offset points')
 plt.tight_layout()
-plt.show()
+st.pyplot()  # Mengganti plt.show() dengan st.pyplot()
 
 #### Polutan PM2.5 (Partikulat 2.5μm)
 # Plot untuk PM2.5
@@ -234,7 +276,7 @@ ax.set_ylabel('Konsentrasi')
 for p in ax.patches:
     ax.annotate(np.round(p.get_height(),decimals=2), (p.get_x()+p.get_width()/2., p.get_height()), ha='center', va='center', xytext=(0, 10), textcoords='offset points')
 plt.tight_layout()
-plt.show()
+st.pyplot()  # Mengganti plt.show() dengan st.pyplot()
 
 #### Polutan PM10 (Partikulat 10μm)
 # Plot untuk PM10
@@ -245,7 +287,7 @@ ax.set_ylabel('Konsentrasi')
 for p in ax.patches:
     ax.annotate(np.round(p.get_height(),decimals=2), (p.get_x()+p.get_width()/2., p.get_height()), ha='center', va='center', xytext=(0, 10), textcoords='offset points')
 plt.tight_layout()
-plt.show()
+st.pyplot()  # Mengganti plt.show() dengan st.pyplot()
 
 #### Polutan CO (Karbon Monoksida)
 # Plot untuk CO
@@ -256,7 +298,7 @@ ax.set_ylabel('Konsentrasi')
 for p in ax.patches:
     ax.annotate(np.round(p.get_height(),decimals=2), (p.get_x()+p.get_width()/2., p.get_height()), ha='center', va='center', xytext=(0, 10), textcoords='offset points')
 plt.tight_layout()
-plt.show()
+st.pyplot()  # Mengganti plt.show() dengan st.pyplot()
 
 
 
@@ -265,13 +307,13 @@ plt.show()
 plt.figure(figsize=(10, 6))
 sns.scatterplot(data=all_df, x='RAIN', y='CO', hue='station')
 plt.title('Scatter plot of CO vs RAIN for each station')
-plt.show()
+st.pyplot()  # Mengganti plt.show() dengan st.pyplot()
 
 #### Pengaruh temperatur terhadap kadar O3 (Ozon)
 plt.figure(figsize=(10, 6))
 sns.scatterplot(data=all_df, x='TEMP', y='O3', hue='station')
 plt.title('Scatter plot of O3 vs TEMP for each station')
-plt.show()
+st.pyplot()  # Mengganti plt.show() dengan st.pyplot()
 
 
 
@@ -286,7 +328,7 @@ plt.title('Fluctuation of CO over years')
 plt.xlabel('Year')
 plt.ylabel('CO concentration')
 plt.legend()
-plt.show()
+st.pyplot()  # Mengganti plt.show() dengan st.pyplot()
 
 #### Fluktuasi polutan lain sepanjang waktu
 # Daftar variabel polutan kecuali CO
@@ -302,7 +344,7 @@ plt.title('Fluctuation of pollutants over years')
 plt.xlabel('Year')
 plt.ylabel('Pollutants concentration')
 plt.legend()
-plt.show()
+st.pyplot()  # Mengganti plt.show() dengan st.pyplot()
 
 
 
@@ -338,4 +380,4 @@ sns.scatterplot(data=all_df, x='PM2.5', y='PM10', hue='cluster', palette='viridi
 plt.title('Hasil Clustering')
 plt.xlabel('PM2.5')
 plt.ylabel('PM10')
-plt.show()
+st.pyplot()  # Mengganti plt.show() dengan st.pyplot()
