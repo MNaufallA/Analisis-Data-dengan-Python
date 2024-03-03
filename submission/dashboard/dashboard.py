@@ -206,8 +206,10 @@ print(pivot_table)
 
 
 ## Visualization & Explanatory Analysis
+st.header('Air Quality Data Analysis :sparkles:')
 
 ### Pertanyaan 1: Bagaimana perbandingan tingkat polutan total antar stasiun?
+st.subheader('Perbandingan Tingkat Polutan Total antar Stasiun')
 # Mendifinikan variabel
 pollutants = ['SO2', 'NO2', 'O3', 'PM2.5', 'PM10', 'CO']
 stations = ['Dongsi', 'Guanyuan', 'Gucheng', 'Huairou', 'Nongzhanguan', 'Shunyi', 'Tiantan', 'Wanliu', 'Wanshouxigong']
@@ -228,13 +230,15 @@ ax.set_xlabel('Konsentrasi')
 ax.invert_yaxis()  # Membalik urutan station
 
 plt.tight_layout()
-st.pyplot()  # Mengganti plt.show() dengan st.pyplot()
+st.pyplot(fig)
 
 
 
 
 ### Pertanyaan 2: Bagaimana perbandingan tiap polutan pada tiap stasiun?
+st.subheader('Perbandingan Tiap Polutan pada Tiap Stasiun')
 #### Polutan SO2 (Sulfur Dioksida)
+st.markdown('## Polutan SO2 (Sulfur Dioksida')
 # Plot untuk SO2
 fig, ax = plt.subplots(figsize=(10, 7))
 grouped['SO2'].sort_values(ascending=False).plot(kind='bar', color='b', ax=ax, title='Perbandingan Tingkat SO2 Antar Station')
@@ -243,9 +247,10 @@ ax.set_ylabel('Konsentrasi')
 for p in ax.patches:
     ax.annotate(np.round(p.get_height(),decimals=2), (p.get_x()+p.get_width()/2., p.get_height()), ha='center', va='center', xytext=(0, 10), textcoords='offset points')
 plt.tight_layout()
-st.pyplot()  # Mengganti plt.show() dengan st.pyplot()
+st.pyplot(fig)
 
 #### Polutan NO2 (Nitrogen Dioksida)
+st.markdown('## Polutan NO2 (Nitrogen Dioksida')
 # Plot untuk NO2
 fig, ax = plt.subplots(figsize=(10, 7))
 grouped['NO2'].sort_values(ascending=False).plot(kind='bar', color='g', ax=ax, title='Perbandingan Tingkat NO2 Antar Station')
@@ -254,9 +259,10 @@ ax.set_ylabel('Konsentrasi')
 for p in ax.patches:
     ax.annotate(np.round(p.get_height(),decimals=2), (p.get_x()+p.get_width()/2., p.get_height()), ha='center', va='center', xytext=(0, 10), textcoords='offset points')
 plt.tight_layout()
-st.pyplot()  # Mengganti plt.show() dengan st.pyplot()
+st.pyplot(fig)
 
 #### Polutan O3 (Ozon)
+st.markdown(' ##Polutan O3 (Ozon)')
 # Plot untuk O3
 fig, ax = plt.subplots(figsize=(10, 7))
 grouped['O3'].sort_values(ascending=False).plot(kind='bar', color='r', ax=ax, title='Perbandingan Tingkat O3 Antar Station')
@@ -265,9 +271,10 @@ ax.set_ylabel('Konsentrasi')
 for p in ax.patches:
     ax.annotate(np.round(p.get_height(),decimals=2), (p.get_x()+p.get_width()/2., p.get_height()), ha='center', va='center', xytext=(0, 10), textcoords='offset points')
 plt.tight_layout()
-st.pyplot()  # Mengganti plt.show() dengan st.pyplot()
+st.pyplot(fig)
 
 #### Polutan PM2.5 (Partikulat 2.5μm)
+st.markdown('## Polutan PM2.5 (Partikulat 2.5μm)')
 # Plot untuk PM2.5
 fig, ax = plt.subplots(figsize=(10, 7))
 grouped['PM2.5'].sort_values(ascending=False).plot(kind='bar', color='c', ax=ax, title='Perbandingan Tingkat PM2.5 Antar Station')
@@ -276,9 +283,10 @@ ax.set_ylabel('Konsentrasi')
 for p in ax.patches:
     ax.annotate(np.round(p.get_height(),decimals=2), (p.get_x()+p.get_width()/2., p.get_height()), ha='center', va='center', xytext=(0, 10), textcoords='offset points')
 plt.tight_layout()
-st.pyplot()  # Mengganti plt.show() dengan st.pyplot()
+st.pyplot(fig)
 
 #### Polutan PM10 (Partikulat 10μm)
+st.markdown('## Polutan PM10 (Partikulat 10μm)')
 # Plot untuk PM10
 fig, ax = plt.subplots(figsize=(10, 7))
 grouped['PM10'].sort_values(ascending=False).plot(kind='bar', color='m', ax=ax, title='Perbandingan Tingkat PM10 Antar Station')
@@ -287,9 +295,10 @@ ax.set_ylabel('Konsentrasi')
 for p in ax.patches:
     ax.annotate(np.round(p.get_height(),decimals=2), (p.get_x()+p.get_width()/2., p.get_height()), ha='center', va='center', xytext=(0, 10), textcoords='offset points')
 plt.tight_layout()
-st.pyplot()  # Mengganti plt.show() dengan st.pyplot()
+st.pyplot(fig)
 
 #### Polutan CO (Karbon Monoksida)
+st.markdown('## Polutan CO (Karbon Monoksida)')
 # Plot untuk CO
 fig, ax = plt.subplots(figsize=(10, 7))
 grouped['CO'].sort_values(ascending=False).plot(kind='bar', color='y', ax=ax, title='Perbandingan Tingkat CO Antar Station')
@@ -298,27 +307,32 @@ ax.set_ylabel('Konsentrasi')
 for p in ax.patches:
     ax.annotate(np.round(p.get_height(),decimals=2), (p.get_x()+p.get_width()/2., p.get_height()), ha='center', va='center', xytext=(0, 10), textcoords='offset points')
 plt.tight_layout()
-st.pyplot()  # Mengganti plt.show() dengan st.pyplot()
+st.pyplot(fig)
 
 
 
 ### Pertanyaan 3: Bagaimana pengaruh kondisi lingkungan terhadap tingkat polutan?
+st.subheader('Pengaruh Kondisi Lingkungan Terhadap Tingkat Polutan')
 #### Pengaruh curah hujan terhadap kadar CO (Karbon Monoksida)
+st.markdown('## Curah Hujan Terhadap Kadar CO)')
 plt.figure(figsize=(10, 6))
 sns.scatterplot(data=all_df, x='RAIN', y='CO', hue='station')
 plt.title('Scatter plot of CO vs RAIN for each station')
-st.pyplot()  # Mengganti plt.show() dengan st.pyplot()
+st.pyplot(fig)
 
 #### Pengaruh temperatur terhadap kadar O3 (Ozon)
+st.markdown('## Temperatur Terhadap Kadar O3 (Ozon)')
 plt.figure(figsize=(10, 6))
 sns.scatterplot(data=all_df, x='TEMP', y='O3', hue='station')
 plt.title('Scatter plot of O3 vs TEMP for each station')
-st.pyplot()  # Mengganti plt.show() dengan st.pyplot()
+st.pyplot(fig)
 
 
 
 ### Pertanyaan 4: Bagaimana fluktuasi tingkat polutan sepanjang waktu?
+st.subheader('Fluktuasi Tingkat Polutan Sepanjang Waktu')
 #### Fluktuasi Karbon Monoksida sepanjang waktu
+st.markdown('## Fluktuasi CO (Karbon Monoksida)')
 plt.figure(figsize=(10, 6))
 
 # Buat line chart untuk CO
@@ -328,9 +342,10 @@ plt.title('Fluctuation of CO over years')
 plt.xlabel('Year')
 plt.ylabel('CO concentration')
 plt.legend()
-st.pyplot()  # Mengganti plt.show() dengan st.pyplot()
+st.pyplot(fig)
 
 #### Fluktuasi polutan lain sepanjang waktu
+st.markdown('## Fluktuasi Polutan Lain')
 # Daftar variabel polutan kecuali CO
 pollutants = ['PM2.5', 'PM10', 'SO2', 'NO2', 'O3']
 
@@ -344,12 +359,13 @@ plt.title('Fluctuation of pollutants over years')
 plt.xlabel('Year')
 plt.ylabel('Pollutants concentration')
 plt.legend()
-st.pyplot()  # Mengganti plt.show() dengan st.pyplot()
+st.pyplot(fig)
 
 
 
 
 ### Pertanyaan 5: Bagaimana distribusi stasiun berdasarkan tingkat polutan dan kondisi lingkungan? (Cluster)
+st.subheader('Distribusi Stasiun Berdasarkan Tingkat Polutan dan Kondisi Lingkungan (Cluster)')
 all_df = pd.get_dummies(all_df, columns=['wd'])
 
 # Pilih fitur yang akan digunakan untuk clustering
@@ -380,4 +396,4 @@ sns.scatterplot(data=all_df, x='PM2.5', y='PM10', hue='cluster', palette='viridi
 plt.title('Hasil Clustering')
 plt.xlabel('PM2.5')
 plt.ylabel('PM10')
-st.pyplot()  # Mengganti plt.show() dengan st.pyplot()
+st.pyplot(fig)
