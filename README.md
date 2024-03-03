@@ -22,7 +22,7 @@ This project is a data analysis and visualization project focused on air quality
 ## Installation
 1. Clone this repository to your local machine:
 ```
-git clone https://github.com/mhdhfzz/data-analyst-dicoding.git
+git clone https://github.com/MNaufallA/Analisis-Data-dengan-Python.git
 ```
 2. Go to the project directory
 ```
