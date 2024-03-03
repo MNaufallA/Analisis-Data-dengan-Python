@@ -237,77 +237,23 @@ st.pyplot(fig)
 
 ### Pertanyaan 2: Bagaimana perbandingan tiap polutan pada tiap stasiun?
 st.subheader('Perbandingan Tiap Polutan pada Tiap Stasiun')
-#### Polutan SO2 (Sulfur Dioksida)
-st.markdown('#### Polutan SO2 (Sulfur Dioksida)')
-# Plot untuk SO2
+
+# Daftar polutan
+pollutants = ['SO2', 'NO2', 'O3', 'PM2.5', 'PM10', 'CO']
+
+# Widget selectbox untuk memilih polutan
+selected_pollutant = st.selectbox('Pilih polutan:', pollutants)
+
+# Plot untuk polutan yang dipilih
 fig, ax = plt.subplots(figsize=(10, 7))
-grouped['SO2'].sort_values(ascending=False).plot(kind='bar', color='b', ax=ax, title='Perbandingan Tingkat SO2 Antar Station')
-ax.set_ylim([0, grouped['SO2'].max() * 1.1])  # Meningkatkan tinggi sumbu y
+grouped[selected_pollutant].sort_values(ascending=False).plot(kind='bar', color='b', ax=ax, title=f'Perbandingan Tingkat {selected_pollutant} Antar Station')
+ax.set_ylim([0, grouped[selected_pollutant].max() * 1.1])  # Meningkatkan tinggi sumbu y
 ax.set_ylabel('Konsentrasi')
 for p in ax.patches:
     ax.annotate(np.round(p.get_height(),decimals=2), (p.get_x()+p.get_width()/2., p.get_height()), ha='center', va='center', xytext=(0, 10), textcoords='offset points')
 plt.tight_layout()
 st.pyplot(fig)
 
-#### Polutan NO2 (Nitrogen Dioksida)
-st.markdown('#### Polutan NO2 (Nitrogen Dioksida)')
-# Plot untuk NO2
-fig, ax = plt.subplots(figsize=(10, 7))
-grouped['NO2'].sort_values(ascending=False).plot(kind='bar', color='g', ax=ax, title='Perbandingan Tingkat NO2 Antar Station')
-ax.set_ylim([0, grouped['NO2'].max() * 1.1])  # Meningkatkan tinggi sumbu y
-ax.set_ylabel('Konsentrasi')
-for p in ax.patches:
-    ax.annotate(np.round(p.get_height(),decimals=2), (p.get_x()+p.get_width()/2., p.get_height()), ha='center', va='center', xytext=(0, 10), textcoords='offset points')
-plt.tight_layout()
-st.pyplot(fig)
-
-#### Polutan O3 (Ozon)
-st.markdown('#### Polutan O3 (Ozon)')
-# Plot untuk O3
-fig, ax = plt.subplots(figsize=(10, 7))
-grouped['O3'].sort_values(ascending=False).plot(kind='bar', color='r', ax=ax, title='Perbandingan Tingkat O3 Antar Station')
-ax.set_ylim([0, grouped['O3'].max() * 1.1])  # Meningkatkan tinggi sumbu y
-ax.set_ylabel('Konsentrasi')
-for p in ax.patches:
-    ax.annotate(np.round(p.get_height(),decimals=2), (p.get_x()+p.get_width()/2., p.get_height()), ha='center', va='center', xytext=(0, 10), textcoords='offset points')
-plt.tight_layout()
-st.pyplot(fig)
-
-#### Polutan PM2.5 (Partikulat 2.5μm)
-st.markdown('#### Polutan PM2.5 (Partikulat 2.5μm)')
-# Plot untuk PM2.5
-fig, ax = plt.subplots(figsize=(10, 7))
-grouped['PM2.5'].sort_values(ascending=False).plot(kind='bar', color='c', ax=ax, title='Perbandingan Tingkat PM2.5 Antar Station')
-ax.set_ylim([0, grouped['PM2.5'].max() * 1.1])  # Meningkatkan tinggi sumbu y
-ax.set_ylabel('Konsentrasi')
-for p in ax.patches:
-    ax.annotate(np.round(p.get_height(),decimals=2), (p.get_x()+p.get_width()/2., p.get_height()), ha='center', va='center', xytext=(0, 10), textcoords='offset points')
-plt.tight_layout()
-st.pyplot(fig)
-
-#### Polutan PM10 (Partikulat 10μm)
-st.markdown('#### Polutan PM10 (Partikulat 10μm)')
-# Plot untuk PM10
-fig, ax = plt.subplots(figsize=(10, 7))
-grouped['PM10'].sort_values(ascending=False).plot(kind='bar', color='m', ax=ax, title='Perbandingan Tingkat PM10 Antar Station')
-ax.set_ylim([0, grouped['PM10'].max() * 1.1])  # Meningkatkan tinggi sumbu y
-ax.set_ylabel('Konsentrasi')
-for p in ax.patches:
-    ax.annotate(np.round(p.get_height(),decimals=2), (p.get_x()+p.get_width()/2., p.get_height()), ha='center', va='center', xytext=(0, 10), textcoords='offset points')
-plt.tight_layout()
-st.pyplot(fig)
-
-#### Polutan CO (Karbon Monoksida)
-st.markdown('#### Polutan CO (Karbon Monoksida)')
-# Plot untuk CO
-fig, ax = plt.subplots(figsize=(10, 7))
-grouped['CO'].sort_values(ascending=False).plot(kind='bar', color='y', ax=ax, title='Perbandingan Tingkat CO Antar Station')
-ax.set_ylim([0, grouped['CO'].max() * 1.1])  # Meningkatkan tinggi sumbu y
-ax.set_ylabel('Konsentrasi')
-for p in ax.patches:
-    ax.annotate(np.round(p.get_height(),decimals=2), (p.get_x()+p.get_width()/2., p.get_height()), ha='center', va='center', xytext=(0, 10), textcoords='offset points')
-plt.tight_layout()
-st.pyplot(fig)
 
 
 ### Pertanyaan 3: Bagaimana pengaruh kondisi lingkungan terhadap tingkat polutan?
