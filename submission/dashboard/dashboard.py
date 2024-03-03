@@ -60,6 +60,120 @@ Wanshouxigong_df = pd.read_csv('https://raw.githubusercontent.com/MNaufallA/Anal
 Wanshouxigong_df.head()
 
 
+### Cleaning Data
+
+#### Membersihkan Data Aotizhongxin_df
+##### Menangani missing value
+# Metode interpolasi
+Aotizhongxin_df[['PM2.5', 'PM10', 'SO2', 'NO2', 'CO', 'O3']] = Aotizhongxin_df[['PM2.5', 'PM10', 'SO2', 'NO2', 'CO', 'O3']].interpolate(method='linear')
+
+# Metode forward fill
+Aotizhongxin_df[['TEMP', 'PRES', 'DEWP', 'RAIN', 'wd', 'WSPM']] = Aotizhongxin_df[['TEMP', 'PRES', 'DEWP', 'RAIN', 'wd', 'WSPM']].fillna(method='ffill')
+Aotizhongxin_df.isna().sum()
+
+#### Membersihkan Data Changping_df
+##### Menangani missing value
+# Metode interpolasi
+Changping_df[['PM2.5', 'PM10', 'SO2', 'NO2', 'CO', 'O3']] = Changping_df[['PM2.5', 'PM10', 'SO2', 'NO2', 'CO', 'O3']].interpolate(method='linear')
+
+# Metode forward fill
+Changping_df[['TEMP', 'PRES', 'DEWP', 'RAIN', 'wd', 'WSPM']] = Changping_df[['TEMP', 'PRES', 'DEWP', 'RAIN', 'wd', 'WSPM']].fillna(method='ffill')
+Aotizhongxin_df.isna().sum()
+
+#### Membersihkan Data Dingling_df
+##### Menangani missing value
+# Metode interpolasi
+Dingling_df[['PM2.5', 'PM10', 'SO2', 'NO2', 'CO', 'O3']] = Dingling_df[['PM2.5', 'PM10', 'SO2', 'NO2', 'CO', 'O3']].interpolate(method='linear')
+
+# Metode forward fill
+Dingling_df[['TEMP', 'PRES', 'DEWP', 'RAIN', 'wd', 'WSPM']] = Dingling_df[['TEMP', 'PRES', 'DEWP', 'RAIN', 'wd', 'WSPM']].fillna(method='ffill')
+Aotizhongxin_df.isna().sum()
+
+#### Membersihkan Data Dongsi_df
+##### Menangani missing value
+# Metode interpolasi
+Dongsi_df[['PM2.5', 'PM10', 'SO2', 'NO2', 'CO', 'O3']] = Dongsi_df[['PM2.5', 'PM10', 'SO2', 'NO2', 'CO', 'O3']].interpolate(method='linear')
+
+# Metode forward fill
+Dongsi_df[['TEMP', 'PRES', 'DEWP', 'RAIN', 'wd', 'WSPM']] = Dongsi_df[['TEMP', 'PRES', 'DEWP', 'RAIN', 'wd', 'WSPM']].fillna(method='ffill')
+Dongsi_df.isna().sum()
+
+#### Membersihkan Data Guanyuan_df
+##### Menangani missing value
+# Metode interpolasi
+Guanyuan_df[['PM2.5', 'PM10', 'SO2', 'NO2', 'CO', 'O3']] = Guanyuan_df[['PM2.5', 'PM10', 'SO2', 'NO2', 'CO', 'O3']].interpolate(method='linear')
+
+# Metode forward fill
+Guanyuan_df[['TEMP', 'PRES', 'DEWP', 'RAIN', 'wd', 'WSPM']] = Guanyuan_df[['TEMP', 'PRES', 'DEWP', 'RAIN', 'wd', 'WSPM']].fillna(method='ffill')
+Guanyuan_df.isna().sum()
+
+#### Membersihkan Data Gucheng_df
+##### Menangani missing value
+# Metode interpolasi
+Gucheng_df[['PM2.5', 'PM10', 'SO2', 'NO2', 'CO', 'O3']] = Gucheng_df[['PM2.5', 'PM10', 'SO2', 'NO2', 'CO', 'O3']].interpolate(method='linear')
+
+# Metode forward fill
+Gucheng_df[['TEMP', 'PRES', 'DEWP', 'RAIN', 'wd', 'WSPM']] = Gucheng_df[['TEMP', 'PRES', 'DEWP', 'RAIN', 'wd', 'WSPM']].fillna(method='ffill')
+
+# Metode backward fill
+Gucheng_df[['NO2']] = Gucheng_df[['NO2']].fillna(method='bfill')
+Gucheng_df.isna().sum()
+
+#### Membersihkan Data Huairou_df
+##### Menangani missing value
+# Metode interpolasi
+Huairou_df[['PM2.5', 'PM10', 'SO2', 'NO2', 'CO', 'O3']] = Huairou_df[['PM2.5', 'PM10', 'SO2', 'NO2', 'CO', 'O3']].interpolate(method='linear')
+
+# Metode forward fill
+Huairou_df[['TEMP', 'PRES', 'DEWP', 'RAIN', 'wd', 'WSPM']] = Huairou_df[['TEMP', 'PRES', 'DEWP', 'RAIN', 'wd', 'WSPM']].fillna(method='ffill')
+Guanyuan_df.isna().sum()
+
+#### Membersihkan Data Nongzhanguan_df
+##### Menangani missing value
+# Metode interpolasi
+Nongzhanguan_df[['PM2.5', 'PM10', 'SO2', 'NO2', 'CO', 'O3']] = Nongzhanguan_df[['PM2.5', 'PM10', 'SO2', 'NO2', 'CO', 'O3']].interpolate(method='linear')
+
+# Metode forward fill
+Nongzhanguan_df[['TEMP', 'PRES', 'DEWP', 'RAIN', 'wd', 'WSPM']] = Nongzhanguan_df[['TEMP', 'PRES', 'DEWP', 'RAIN', 'wd', 'WSPM']].fillna(method='ffill')
+Nongzhanguan_df.isna().sum()
+
+#### Membersihkan Data Shunyi_df
+##### Menangani missing value
+# Metode interpolasi
+Shunyi_df[['PM2.5', 'PM10', 'SO2', 'NO2', 'CO', 'O3']] = Shunyi_df[['PM2.5', 'PM10', 'SO2', 'NO2', 'CO', 'O3']].interpolate(method='linear')
+
+# Metode forward fill
+Shunyi_df[['TEMP', 'PRES', 'DEWP', 'RAIN', 'wd', 'WSPM']] = Shunyi_df[['TEMP', 'PRES', 'DEWP', 'RAIN', 'wd', 'WSPM']].fillna(method='ffill')
+Shunyi_df.isna().sum()
+
+#### Membersihkan Data Tiantan_df
+##### Menangani missing value
+# Metode interpolasi
+Tiantan_df[['PM2.5', 'PM10', 'SO2', 'NO2', 'CO', 'O3']] = Tiantan_df[['PM2.5', 'PM10', 'SO2', 'NO2', 'CO', 'O3']].interpolate(method='linear')
+
+# Metode forward fill
+Tiantan_df[['TEMP', 'PRES', 'DEWP', 'RAIN', 'wd', 'WSPM']] = Tiantan_df[['TEMP', 'PRES', 'DEWP', 'RAIN', 'wd', 'WSPM']].fillna(method='ffill')
+Tiantan_df.isna().sum()
+
+#### Membersihkan Data Wanliu_df
+##### Menangani missing value
+# Metode interpolasi
+Wanliu_df[['PM2.5', 'PM10', 'SO2', 'NO2', 'CO', 'O3']] = Wanliu_df[['PM2.5', 'PM10', 'SO2', 'NO2', 'CO', 'O3']].interpolate(method='linear')
+
+# Metode forward fill
+Wanliu_df[['TEMP', 'PRES', 'DEWP', 'RAIN', 'wd', 'WSPM']] = Wanliu_df[['TEMP', 'PRES', 'DEWP', 'RAIN', 'wd', 'WSPM']].fillna(method='ffill')
+Wanliu_df.isna().sum()
+
+#### Membersihkan Data Wanshouxigong_df
+##### Menangani missing value
+# Metode interpolasi
+Wanshouxigong_df[['PM2.5', 'PM10', 'SO2', 'NO2', 'CO', 'O3']] = Wanshouxigong_df[['PM2.5', 'PM10', 'SO2', 'NO2', 'CO', 'O3']].interpolate(method='linear')
+
+# Metode forward fill
+Wanshouxigong_df[['TEMP', 'PRES', 'DEWP', 'RAIN', 'wd', 'WSPM']] = Wanshouxigong_df[['TEMP', 'PRES', 'DEWP', 'RAIN', 'wd', 'WSPM']].fillna(method='ffill')
+Wanshouxigong_df.isna().sum()
+
+
 ## Exploratory Data Analysis (EDA)
 ### Explore Data all_df
 #### Penggabungan seluruh DataFrame
